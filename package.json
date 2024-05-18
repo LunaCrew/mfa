@@ -1,0 +1,74 @@
+{
+  "name": "@lunacrew/mfa",
+  "version": "0.0.1",
+  "description": "Library for generating and verifying multi-factor authentication codes",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "/dist",
+    "index.d.ts"
+  ],
+  "author": "Ash Trindade",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LunaCrew/mfa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LunaCrew/mfa/issues"
+  },
+  "homepage": "https://github.com/LunaCrew/mfa/blob/main/README.md",
+  "keywords": [
+    "authentication",
+    "google authenticator",
+    "hmac",
+    "hotp",
+    "multi-factor",
+    "one-time password",
+    "passwords",
+    "totp",
+    "two factor",
+    "two-factor",
+    "two-factor authentication"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "start": "node dist/src/index.js",
+    "lint": "npx eslint . --fix",
+    "test": "npm run test:coverage",
+    "test:unit": "jest --verbose ./test",
+    "test:coverage": "jest --verbose ./test --coverage",
+    "dependencies:reset": "rm -rf node_modules && rm package-lock.json && npm install",
+    "dependencies:fix": "node scripts/fixDependencies.js",
+    "clear:build": "rm -rf dist",
+    "clear:coverage": "rm -rf coverage",
+    "prepare": "husky install",
+    "help": "node scripts/help.js",
+    "pkg:publish": "rm -rf dist && npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/jest": "29.5.11",
+    "@types/module-alias": "2.0.4",
+    "@types/node": "20.12.2",
+    "@types/supertest": "2.0.16",
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2",
+    "eslint": "8.57.0",
+    "husky": "8.0.3",
+    "jest": "29.7.0",
+    "supertest": "6.3.4",
+    "ts-jest": "29.1.2",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.4.3"
+  },
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  }
+}
