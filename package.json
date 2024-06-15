@@ -67,8 +67,10 @@
     "tsconfig-paths": "4.2.0",
     "typescript": "5.4.3"
   },
-  "dependencies": {},
   "directories": {
     "test": "test"
+  },
+  "dependencies": {
+    "@lunacrew/base32": "0.0.4"
   }
 }
