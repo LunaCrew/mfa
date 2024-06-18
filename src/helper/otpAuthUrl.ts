@@ -1,6 +1,6 @@
 import url from 'url'
-import { OtpAuthOptions } from '../types/Options'
 import Base32 from '@lunacrew/base32'
+import { OtpAuthOptions } from '../types/Options'
 
 /**
  * Generate a Google Authenticator-compatible otpauth:// URL for passing the
@@ -14,15 +14,15 @@ import Base32 from '@lunacrew/base32'
  * To generate a suitable QR Code, pass the generated URL to a QR Code
  * generator, such as the `qr-image` module.
  * 
- * @param options - The options for generating the OTP authentication URL.
- * @param options.secret - The shared secret key.
- * @param options.label - The label for the account.
- * @param options.issuer - The issuer for the account.
- * @param options.type - The type of OTP. Defaults to totp.
- * @param options.period - The period for the OTP. Defaults to 30.
- * @param options.digits - The number of digits for the OTP. Defaults to 6.
- * @param options.algorithm - The algorithm for the OTP. Defaults to SHA1.
- * @param options.encoding - The encoding for the secret. Defaults to ascii.
+ * @param {OtpAuthOptions} options - The options for generating the OTP authentication URL.
+ * @param {string} options.secret - The shared secret key.
+ * @param {string} options.label - The label for the account.
+ * @param {string} options.issuer - The issuer for the account.
+ * @param {'totp' | 'hotp'} options.type - The type of OTP. Defaults to totp.
+ * @param {number} options.period - The period for the OTP. Defaults to 30.
+ * @param {number} options.digits - The number of digits for the OTP. Defaults to 6.
+ * @param {'SHA1' | 'SHA256' | 'SHA512'} options.algorithm - The algorithm for the OTP. Defaults to SHA1.
+ * @param {'ascii' | 'hex' | 'base32'} options.encoding - The encoding for the secret. Defaults to ascii.
  * @returns The generated OTP authentication URL.
  * @throws Error if the provided options are invalid.
  * @see https://github.com/google/google-authenticator/wiki/Key-Uri-Format

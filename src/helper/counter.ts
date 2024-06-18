@@ -6,10 +6,10 @@ import { CounterOptions } from '../types/Options'
  * by finding the number of time steps that have
  * passed since the epoch to the current time.
  *
- * @param options - The options for calculating the counter value.
- * @param options.step - The time step in seconds. Defaults to 30.
- * @param options.time - The time to calculate the counter value for. Defaults to the Date.now().
- * @param options.epoch - The epoch time to calculate the counter value from. Defaults to 0.
+ * @param {CounterOptions} options - The options for calculating the counter value.
+ * @param {number} options.step - The time step in seconds. Defaults to 30.
+ * @param {number} options.time - The time to calculate the counter value for. Defaults to the Date.now().
+ * @param {number} options.epoch - The epoch time to calculate the counter value from. Defaults to 0.
  * @returns The calculated counter value.
  */
 const counter = (options?: CounterOptions): number => {

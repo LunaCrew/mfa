@@ -5,11 +5,11 @@ import { DigestOptions } from '../types/Options'
 /**
  * Calculates the digest of a secret using the specified options.
  *
- * @param options - The options for calculating the digest.
- * @param options.secret - The shared secret key.
- * @param options.counter - The counter for the digest.
- * @param options.algorithm - The algorithm for the digest. Defaults to SHA1.
- * @param options.encoding - The encoding for the secret. Defaults to ascii.
+ * @param {DigestOptions} options - The options for calculating the digest.
+ * @param {string} options.secret - The shared secret key.
+ * @param {number} options.counter - The counter for the digest.
+ * @param {'SHA1' | 'SHA256' | 'SHA512'} options.algorithm - The algorithm for the digest. Defaults to SHA1.
+ * @param {'ascii' | 'hex' | 'base32'} options.encoding - The encoding for the secret. Defaults to ascii.
  * @returns The calculated digest as a Buffer.
  * @throws Error if the algorithm is not supported.
  */

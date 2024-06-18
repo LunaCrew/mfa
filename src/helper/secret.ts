@@ -1,14 +1,14 @@
 import crypto from 'crypto'
+import Base32 from '@lunacrew/base32'
 import { SecretOptions } from '../types/Options'
 import { SecretKey } from '../types/SecretKey'
-import Base32 from '@lunacrew/base32'
 
 /**
  * Generates a random ASCII string of the specified length (default 32)
  * from A-Z, a-z, 0-9, and symbols (if requested).
  * 
- * @param length - The length of the generated string. Defaults to 32 if not provided.
- * @param symbols - Whether to include symbols in the generated string. Defaults to false if not provided.
+ * @param {number} length - The length of the generated string. Defaults to 32 if not provided.
+ * @param {string} symbols - Whether to include symbols in the generated string. Defaults to false if not provided.
  * @returns The generated ASCII string.
  * @throws Error if the length is less than 1 or greater than 1024.
  */
@@ -36,12 +36,12 @@ const generateASCII = (length: number, symbols: boolean): string => {
  * of the specified length (default 32).
  * Returns the secret key in ASCII, hexadecimal, and base32 format
  * 
- * @param options - The options for generating the secret key.
- * @param options.length - The length of the generated secret key. Defaults to 32.
- * @param options.otpAuthUrl - Whether to include the OTP authentication URL in the secret key. Defaults to false.
- * @param options.label - The label for the account.
- * @param options.issuer - The issuer for the account.
- * @param options.symbols - Whether to include symbols in the generated secret key. Defaults to true.
+ * @param {SecretOptions} options - The options for generating the secret key.
+ * @param {string} options.label - The label for the account.
+ * @param {string} options.issuer - The issuer for the account.
+ * @param {string} options.length - The length of the generated secret key. Defaults to 32.
+ * @param {boolean} options.otpAuthUrl - Whether to include the OTP authentication URL in the secret key. Defaults to false.
+ * @param {boolean} options.symbols - Whether to include symbols in the generated secret key. Defaults to true.
  * @returns The generated secret key.
  * @throws Error if the length is less than 1 or greater than 1024.
  */
